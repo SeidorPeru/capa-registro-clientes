@@ -1,0 +1,85 @@
+<mvc:View controllerName="com.sapregistrocliente.controller.App" xmlns:html="http://www.w3.org/1999/xhtml" 
+xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" 
+xmlns:f="sap.ui.layout.form" xmlns:t="sap.ui.table">
+	<App>
+		<pages>
+			<Page showHeader="false" title="{i18n>title}">
+				<content>
+					<f:Form editable="true" ariaLabelledBy="Title1">
+						<f:layout>
+							<f:ResponsiveGridLayout labelSpanXL="4" labelSpanL="4" labelSpanM="4" 
+							labelSpanS="12" adjustLabelSpan="false" emptySpanXL="2" emptySpanL="2"
+								emptySpanM="2" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" 
+								singleContainerFullSize="false"/>
+						</f:layout>
+						<f:formContainers>
+							<f:FormContainer>
+								<f:formElements>
+									<f:FormElement label="Tipo de Documento">
+										<f:fields>
+											<Select id="cbo_tipo_doc" width="100%" selectedKey="{/TipoDocumento}">
+												<items>
+													<core:Item key="DNI" text="DNI"/>
+													<core:Item key="RUC" text="RUC"/>
+													<core:Item key="CARNET DE EXTRANJERIA" text="CARNET DE EXTRANJERIA"/>
+													<core:Item key="PASSPORTE" text="PASSPORTE"/>
+												</items>
+											</Select>
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="N° de Documento">
+										<f:fields>
+											<Input id="txt_nro_doc" value="{/NroDocumento}"/>
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="Nombre">
+										<f:fields>
+											<Input id="txt_nombre" value="{/Nombre}"/>
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="Apellidos">
+										<f:fields>
+											<Input id="txt_apellido" value="{/Apellidos}"/>
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="Fecha nacimiento">
+										<f:fields>
+											<DatePicker id="dp_fecha_nacimiento" displayFormat="dd/MM/yyyy" 
+											valueFormat="dd/MM/yyyy" value="{/FechaNacimiento}"/>
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="Dirección">
+										<f:fields>
+											<Input id="txt_direccion" value="{/Direccion}"/>
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="Correo">
+										<f:fields>
+											<Input id="txt_correo" value="{/Correo}"/>
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="Celular">
+										<f:fields>
+											<Input id="txt_celular" value="{/Celular}"/>
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="Empresa">
+										<f:fields>
+											<Input id="txt_empresa" value="{/Empresa}"/>
+										</f:fields>
+									</f:FormElement>
+								</f:formElements>
+							</f:FormContainer>
+						</f:formContainers>
+					</f:Form>
+				</content>
+				<footer>
+					<OverflowToolbar id="otb1">
+						<ToolbarSpacer/>
+						<Button text="Guardar" press="onCreate" type="Transparent"/>
+					</OverflowToolbar>
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

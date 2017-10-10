@@ -1,0 +1,29 @@
+<edmx:Edmx
+    xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" Version="1.0">
+    <edmx:DataServices
+        xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" m:DataServiceVersion="2.0">
+        <Schema
+            xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices"
+            xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+            xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="demo.Service">
+            <EntityType Name="ClienteType">
+                <Key>
+                    <PropertyRef Name="Id"/>
+                </Key>
+                <Property Name="Id" Type="Edm.Int32" Nullable="false"/>
+                <Property Name="TipoDocumento" Type="Edm.String" MaxLength="20"/>
+                <Property Name="NroDocumento" Type="Edm.String" MaxLength="20"/>
+                <Property Name="Nombre" Type="Edm.String" MaxLength="50"/>
+                <Property Name="Apellidos" Type="Edm.String" MaxLength="100"/>
+                <Property Name="FechaNacimiento" Type="Edm.String" MaxLength="12"/>
+                <Property Name="Direccion" Type="Edm.String" MaxLength="250"/>
+                <Property Name="Correo" Type="Edm.String" MaxLength="250"/>
+                <Property Name="Celular" Type="Edm.String" MaxLength="20"/>
+                <Property Name="Empresa" Type="Edm.String" MaxLength="100"/>
+            </EntityType>
+            <EntityContainer Name="Service" m:IsDefaultEntityContainer="true">
+                <EntitySet Name="Cliente" EntityType="demo.Service.ClienteType"/>
+            </EntityContainer>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
